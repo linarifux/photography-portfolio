@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'; // Use NavLink for page navigation
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom"; // Use NavLink for page navigation
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,11 +14,22 @@ const Header = () => {
         <NavLink to="/" className="nav-logo" onClick={closeMenu}>
           JD Photography
         </NavLink>
-        
-        <ul className={isMenuOpen ? 'nav-menu active' : 'nav-menu'}>
+
+        <ul className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
+          {/* Add this new list item */}
           <li className="nav-item">
             <NavLink to="/portfolio" className="nav-link" onClick={closeMenu}>
               Portfolio
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/blog" className="nav-link" onClick={closeMenu}>
+              Blog
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/pricing" className="nav-link" onClick={closeMenu}>
+              Pricing
             </NavLink>
           </li>
           <li className="nav-item">
@@ -32,9 +43,9 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        
-        <div 
-          className={isMenuOpen ? 'hamburger active' : 'hamburger'} 
+
+        <div
+          className={isMenuOpen ? "hamburger active" : "hamburger"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="bar"></span>

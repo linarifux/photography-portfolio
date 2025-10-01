@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import './AdminDashboard.css'; // We'll create this CSS file next
+import React from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import "./AdminDashboard.css"; // We'll create this CSS file next
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
   const logoutHandler = () => {
-    localStorage.removeItem('userInfo');
-    navigate('/admin/login');
+    localStorage.removeItem("userInfo");
+    navigate("/admin/login");
   };
 
   return (
@@ -17,8 +17,12 @@ const AdminDashboard = () => {
         <nav className="sidebar-nav">
           <Link to="/admin/dashboard/projects">Projects</Link>
           <Link to="/admin/dashboard/messages">Messages</Link>
+          <Link to="/admin/dashboard/blog">Blog</Link>
+          <Link to="/admin/dashboard/pricing">Pricing</Link> {/* Add this line */}
         </nav>
-        <button onClick={logoutHandler} className="logout-button">Logout</button>
+        <button onClick={logoutHandler} className="logout-button">
+          Logout
+        </button>
       </aside>
       <main className="main-content">
         <Outlet /> {/* Child routes will be rendered here */}

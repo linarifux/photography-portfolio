@@ -11,9 +11,18 @@ import LoginPage from './pages/LoginPage';
 import AdminDashboard from './pages/AdminDashboard';
 import PrivateRoute from './components/PrivateRoute';
 
+import BlogPage from './pages/BlogPage';
+import SinglePostPage from './pages/SinglePostPage';
+
 // Admin Components
 import ProjectManager from './components/admin/ProjectManager';
 import MessageViewer from './components/admin/MessageViewer';
+
+import BlogManager from './components/admin/BlogManager'; // Import the new component
+
+import PricingPage from './pages/PricingPage';
+import PricingManager from './components/admin/PricingManager';
+
 
 function App() {
   return (
@@ -25,6 +34,9 @@ function App() {
           <Route path="portfolio" element={<PortfolioPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="blog" element={<BlogPage />} /> {/* New blog list route */}
+          <Route path="pricing" element={<PricingPage />} /> {/* Add this line */}
+          <Route path="blog/:slug" element={<SinglePostPage />} /> {/* New single post route */}
         </Route>
 
         {/* Admin routes without the public layout */}
@@ -34,6 +46,8 @@ function App() {
             <Route index element={<ProjectManager />} />
             <Route path="projects" element={<ProjectManager />} />
             <Route path="messages" element={<MessageViewer />} />
+            <Route path="blog" element={<BlogManager />} />
+            <Route path="pricing" element={<PricingManager />} />
           </Route>
         </Route>
       </Routes>

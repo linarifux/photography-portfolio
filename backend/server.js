@@ -37,6 +37,18 @@ import messageRoutes from './routes/MessageRoutes.js'
 // Add with your other app.use() calls
 app.use('/api/messages', messageRoutes);
 
+// Add with your other route imports
+import postRoutes from './routes/postRoutes.js';
+
+// Add with your other app.use() calls
+app.use('/api/posts', postRoutes);
+
+// Add with your other route imports
+import pricingRoutes from './routes/pricingRoutes.js';
+
+// Add with your other app.use() calls
+app.use('/api/pricing', pricingRoutes);
+
 
 const PORT = process.env.PORT || 5001;
 
