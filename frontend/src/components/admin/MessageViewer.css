@@ -1,0 +1,93 @@
+.message-viewer {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.mv-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mv-header h2 {
+  font-size: 1.8rem;
+  color: #1a222e;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.message-card.unread {
+  border-left-color: var(--primary-color);
+  background-color: #fff9f9;
+}
+
+.message-card-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sender-info strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.sender-info span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.message-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.message-card-body {
+  padding: 1.5rem;
+  white-space: pre-wrap; /* Preserves line breaks in the message */
+  line-height: 1.6;
+}
+
+.message-card-actions {
+  padding: 0 1.5rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
+
+.empty-inbox {
+  text-align: center;
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
